@@ -1,1 +1,74 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Projects Showcase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 2em;
+      background: #121212;
+      color: #eee;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+    }
+
+    .pdf-container {
+      display: flex;
+      justify-content: center;
+      margin: 2em 0;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 500px;
+      border: 1px solid #444;
+      background: #1e1e1e;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 1em;
+      padding: 0.8em 1.5em;
+      background: #1e88e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .links a:hover {
+      background: #1565c0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to My Projects Showcase</h1>
+
+  <div class="pdf-container">
+    <iframe src="project-showcase.pdf" title="Project Showcase PDF">
+      Your browser does not support PDF embedding.
+    </iframe>
+  </div>
+
+  <div class="links">
+    <a href="project-showcase.pdf#view=Fit&page=1&toolbar=0" target="_blank">Download Project Showcase (PDF)</a>
+    <a href="https://bitbucket.org/meic_sample_projects/datapad_sample/src/main/" target="_blank">
+      View Example Code on Bitbucket
+    </a>
+  </div>
+
+</body>
+</html>
