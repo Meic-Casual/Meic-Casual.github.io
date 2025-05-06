@@ -17,16 +17,47 @@
       color: #fff;
     }
 
-    .pdf-container {
+    .pdf-container-wrapper {
+      position: relative;
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       margin: 2em 0;
     }
 
+    .pdf-container {
+      position: relative;
+    }
+
+    .pdf-sidebar {
+      position: absolute;
+      top: 0;
+      right: -180px;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    .pdf-sidebar a {
+      display: inline-block;
+      padding: 0.6em 1em;
+      background: #1e88e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+      text-align: center;
+      width: 120px;
+    }
+
+    .pdf-sidebar a:hover {
+      background: #1565c0;
+    }
+
     iframe {
-      width: 100%;
-      max-width: 800px;
-      height: 500px;
+      width: 1000px;
+      height: 610px;
       border: 1px solid #444;
       background: #1e1e1e;
     }
@@ -34,22 +65,46 @@
     .links {
       text-align: center;
       margin-top: 2em;
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .links a {
+    .links a.repo-button {
       display: inline-block;
-      margin: 1em;
-      padding: 0.8em 1.5em;
-      background: #1e88e5;
+      padding: 1em 1.5em;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
       transition: background 0.2s ease;
+      width: 100%;
+      max-width: 500px;
     }
 
-    .links a:hover {
-      background: #1565c0;
+    .repo-button.green {
+      background: #2e7d32;
+    }
+    .repo-button.green:hover {
+      background: #1b5e20;
+    }
+
+    .repo-button.orange {
+      background: #c77800; /* darker orange */
+      color: #fff;
+    }
+    .repo-button.orange:hover {
+      background: #a65f00;
+    }
+
+    .repo-button small {
+      display: block;
+      font-size: 0.85em;
+      font-weight: normal;
+      margin-top: 0.3em;
+      opacity: 0.8;
     }
   </style>
 </head>
@@ -57,31 +112,30 @@
 
   <h1>Welcome to My Projects Showcase</h1>
 
-  <div class="pdf-container">
-    <iframe src="project-showcase.pdf" title="Project Showcase PDF">
-      Your browser does not support PDF embedding.
-    </iframe>
+  <div class="pdf-container-wrapper">
+    <div class="pdf-container">
+      <iframe src="project-showcase.pdf" title="Project Showcase PDF">
+        Your browser does not support PDF embedding.
+      </iframe>
+      <div class="pdf-sidebar">
+        <a href="project-showcase.pdf#view=Fit&navpanes=0&toolbar=0" target="_blank" rel="noopener noreferrer">
+          Open Fullscreen
+        </a>
+        <a href="project-showcase.pdf" download="Dominik_Bryk__Project_Showcase.pdf">
+          Download PDF
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="links">
-    <a 
-	  href="project-showcase.pdf#view=Fit&navpanes=0&toolbar=0" 
-	  target="_blank" 
-	  rel="noopener noreferrer"
-	  class="button"
-	>
-	  Open Fullscreen PDF
-	</a>
-
-	<a 
-	  href="project-showcase.pdf" 
-	  download="Dominik_Bryk__Project_Showcase.pdf"
-	  class="button"
-	>
-	  Download PDF
-	</a>
-    <a href="https://bitbucket.org/meic_sample_projects/datapad_sample/src/main/" target="_blank">
-      View Example Code on Bitbucket
+    <a class="repo-button green" href="https://bitbucket.org/meic_sample_projects/datapad_sample/src/main/" target="_blank">
+      View 'Datapad' sample project on Bitbucket
+      <small>Unity, C#</small>
+    </a>
+    <a class="repo-button orange" href="https://github.com/Meic-Casual/TradingBot/tree/main" target="_blank">
+      View 'Trading Bot' sample project on GitHub
+      <small>C#, EF Core, Refit</small>
     </a>
   </div>
 
